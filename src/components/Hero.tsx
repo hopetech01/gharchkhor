@@ -1,4 +1,3 @@
-import { GlobeDemo } from "./Globe";
 import ShimmerButton from "./ui/shimmer-button";
 
 
@@ -33,7 +32,7 @@ export const Hero = () => {
 
       {/* Hero cards sections */}
       <div className="z-10">
-        <GlobeDemo />
+        {/* <GlobeDemo /> */}
       </div>
 
       {/* Shadow effect */}

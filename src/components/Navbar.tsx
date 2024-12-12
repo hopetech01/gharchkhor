@@ -16,7 +16,7 @@ import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
-import { LogoIcon } from "./Icons";
+import LogoIcon from "../assets/gharchkhor.png";
 
 interface RouteProps {
   href: string;
@@ -25,21 +25,9 @@ interface RouteProps {
 
 const routeList: RouteProps[] = [
   {
-    href: "#features",
-    label: "Features",
-  },
-  {
-    href: "#services",
-    label: "Services",
-  },
-  {
-    href: "#pricing",
-    label: "Pricing",
-  },
-  {
-    href: "#faq",
-    label: "FAQ",
-  },
+    href: "#kouche",
+    label: "کوچه",
+  }
 ];
 
 export const Navbar = () => {
@@ -48,16 +36,10 @@ export const Navbar = () => {
     <header className="sticky border-b-[1px] top-0 z-40 w-full bg-white dark:border-b-slate-700 dark:bg-background">
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
-          <NavigationMenuItem className="font-bold flex">
-            <a
-              rel="noreferrer noopener"
-              href="/"
-              className="ml-2 font-bold text-xl flex"
-            >
-              <LogoIcon />
-              DataFlux
-            </a>
-          </NavigationMenuItem>
+
+          <div className="hidden md:flex gap-2">
+            <ModeToggle />
+          </div>
 
           {/* mobile */}
           <span className="flex md:hidden">
@@ -126,19 +108,22 @@ export const Navbar = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex gap-2">
-            {/* <a
+          <NavigationMenuItem className="font-bold flex">
+            <a
               rel="noreferrer noopener"
-              href="https://github.com/leoMirandaa/shadcn-landing-page.git"
-              target="_blank"
-              className={`border ${buttonVariants({ variant: "secondary" })}`}
+              href="/"
+              className="ml-2 font-bold text-xl flex"
             >
-              <GitHubLogoIcon className="mr-2 w-5 h-5" />
-              Github
-            </a> */}
+              قارچ خور
+              <img
+                src={LogoIcon}
+                alt="Illustration of DataFlux services"
+                className="ml-2 w-[24px] object-contain rounded-lg"
+              />
+          
+            </a>
+          </NavigationMenuItem>
 
-            <ModeToggle />
-          </div>
         </NavigationMenuList>
       </NavigationMenu>
     </header>
